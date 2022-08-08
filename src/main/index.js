@@ -12,6 +12,8 @@ async function main () {
   // await system.show({ window: 0 })
   // await system.show({ window: 1 })
 
+  console.log('ok')
+
   //
   // ## Example
   // Handling inbound messages and returning responses.
@@ -35,6 +37,22 @@ async function main () {
 
   process.stdin.on('data', d => {
     console.log('data***', d.toString())
+  })
+
+  window.addEventListener('data', ev => {
+    console.log('evvvvvvvvvvv', ev)
+  })
+
+  console.log('**system**', system)
+
+  console.log('**window**', window)
+
+  system.send({
+    api: 'ssc-node',
+    method: 'testConsole',
+    arguments: [{
+      args: stringify(args)
+    }]
   })
 
   // process.stdin.pipe(process.stdout)

@@ -1,6 +1,29 @@
 {
+  "name": "ssc-echo",
+  "description": "An echo CLI tool. The simplest possible ssc process.",
+  "version": "0.0.0",
+  "main": "src/main/index.js",
+  "dependencies": {
+    "esbuild-darwin-64": "^0.14.53"
+  },
   "devDependencies": {
     "@socketsupply/ssc-node": "^1.8.2",
     "esbuild": "^0.14.53"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nichoth/ssc-echo.git"
+  },
+  "keywords": [
+    "ssc"
+  ],
+  "author": "nichoth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nichoth/ssc-echo/issues"
+  },
+  "homepage": "https://github.com/nichoth/ssc-echo#readme"
 }

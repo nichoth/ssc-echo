@@ -1,3 +1,4 @@
 # ssc echo
 
-an echo CLI tool
+An echo CLI tool. The simplest possible ssc process.
+

@@ -19,6 +19,7 @@ async function main () {
   //
   system.receive = async (command, value) => {
     console.log('received', command, value)
+
     if (value && value.restart) {
       await system.restart()
     }
@@ -30,63 +31,71 @@ async function main () {
     }
   }
 
+  // console.log('process', process)
+
+  process.stdin.on('data', d => {
+    console.log('data***', d.toString())
+  })
+
+  // process.stdin.pipe(process.stdout)
+
   //
   // ## Example
   // Navigate from the current location
   //
-  const resourcesDirectory = path.dirname(process.argv[1])
-  const file = path.join(resourcesDirectory, 'index.html')
-  await system.navigate({ window: 0, value: `file://${file}` })
+  // const resourcesDirectory = path.dirname(process.argv[1])
+  // const file = path.join(resourcesDirectory, 'index.html')
+  // await system.navigate({ window: 0, value: `file://${file}` })
   // await system.navigate({ window: 1, value: `file://${file}` })
 
   // await system.setSize({ window: 0, width: 200, height: 200 })
 
-  const size = await system.getScreenSize()
+  // const size = await system.getScreenSize()
 
-  assert(size.width, 'screen has width')
-  assert(size.height, 'screen has width')
+  // assert(size.width, 'screen has width')
+  // assert(size.height, 'screen has width')
 
   //
   // ## Example
   // Set the title of a window
   //
-  await system.setTitle({ window: 0, value: 'Hello' })
+  // await system.setTitle({ window: 0, value: 'Hello' })
 
   //
   // ## Example
   // A template to set the window's menu
   //
-  const menu = `
-    Operator:
-      About Operator: _
-      ---
-      Preferences...: , + Meta
-      ---
-      Hide: h + Meta
-      Hide Others: h + CommandOrControl + Meta
-      ---
-      Quit: q + CommandOrControl
-    ;
-    Edit:
-      Cut: x + CommandOrControl
-      Copy: c + CommandOrControl
-      Paste: v + CommandOrControl
-      Delete: _
-      Select All: a + CommandOrControl
-    ;
-    Foo:
-      Bazz: z + Meta
-      ---
-      Quxx: e + Meta + Alt
-    ;
-    Other:
-      Another Test: t + Alt
-      !Bloop: b + Alt
-      Beep: T + Meta
-    ;
-  `
+  // const menu = `
+  //   Operator:
+  //     About Operator: _
+  //     ---
+  //     Preferences...: , + Meta
+  //     ---
+  //     Hide: h + Meta
+  //     Hide Others: h + CommandOrControl + Meta
+  //     ---
+  //     Quit: q + CommandOrControl
+  //   ;
+  //   Edit:
+  //     Cut: x + CommandOrControl
+  //     Copy: c + CommandOrControl
+  //     Paste: v + CommandOrControl
+  //     Delete: _
+  //     Select All: a + CommandOrControl
+  //   ;
+  //   Foo:
+  //     Bazz: z + Meta
+  //     ---
+  //     Quxx: e + Meta + Alt
+  //   ;
+  //   Other:
+  //     Another Test: t + Alt
+  //     !Bloop: b + Alt
+  //     Beep: T + Meta
+  //   ;
+  // `
 
-  await system.setMenu({ window: 0, value: menu })
+  // await system.setMenu({ window: 0, value: menu })
 
   //
   // ## Example

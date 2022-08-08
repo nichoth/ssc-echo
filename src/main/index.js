@@ -12,7 +12,13 @@ async function main () {
   // await system.show({ window: 0 })
   // await system.show({ window: 1 })
 
-  console.log('ok')
+  console.log('**ok**')
+
+  console.log('**system**', system)
+
+  console.log('**window**', !!window)
+
+  console.log('**process**', Object.keys(process))
 
   //
   // ## Example
@@ -42,10 +48,6 @@ async function main () {
   window.addEventListener('data', ev => {
     console.log('evvvvvvvvvvv', ev)
   })
-
-  console.log('**system**', system)
-
-  console.log('**window**', window)
 
   system.send({
     api: 'ssc-node',

@@ -3,7 +3,7 @@
 An echo CLI tool. The simplest possible ssc process.
 
 This depends on having the `ssc` command available in your shell, via
-[socket-sdk](https://github.com/socketsupply/socket-sdk)
+[socket-sdk](https://sockets.sh/)
 
 ## build
 
